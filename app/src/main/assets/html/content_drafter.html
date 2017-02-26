@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--MUI CSS-->
+    <link rel="stylesheet" href="../css/mui.min.css">
+
+    <!--arcgis部分-->
+    <link rel="stylesheet" type="text/css"
+          href="http://192.168.2.108/arcgis_js_api/library/3.14/3.14/dijit/themes/tundra/tundra.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="http://192.168.2.108/arcgis_js_api/library/3.14/3.14/esri/css/esri.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/claro.css">
+    <script type="text/javascript" src="http://192.168.2.108/arcgis_js_api/library/3.14/3.14/init.js"></script>
+    <script type="text/javascript" src="../js/WebTile.js"></script>
+    <script type="text/javascript" src="../js/TiandituLayers.js"></script>
+    <script src="../js/arcgis_map2.js"></script>
+
+    <style type="text/css">
+        #tabs {
+            width: 100%;
+            height: auto;
+        }
+
+        button {
+            margin: 10px;
+        }
+
+        /*跨webview需要手动指定位置*/
+
+        .mui-plus header.mui-bar {
+            display: none !important;
+        }
+
+        .mui-plus .mui-bar-nav ~ .mui-content {
+            padding: 0 !important;
+        }
+
+        .mui-plus .plus {
+            display: inline;
+        }
+
+        .plus {
+            display: none;
+        }
+
+        #topPopover .mui-popover-arrow {
+            left: auto;
+            right: 6px;
+        }
+
+        p {
+            text-indent: 22px;
+        }
+
+        span.mui-icon {
+            font-size: 14px;
+            color: #007aff;
+            margin-left: -15px;
+            padding-right: 10px;
+        }
+
+        .mui-popover {
+            height: 100px;
+        }
+
+        .mui-content {
+            padding: 10px;
+        }
+
+        html, body, #mapView {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+<nav class="mui-bar mui-bar-nav" style="border: 1px solid #dd524d;background-color: #dd524d">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title" style="color: #ffffff">折叠面板</h1>
+</nav>
+
+<div id="tabs" class="mui-content" style="margin-top: 6%">
+    <!--地图部分-->
+    <div id="mapView" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
+        <div id="mapContainer" data-dojo-type="dojox.mobile.ContentPane">
+            <div id="map" style="height:900px">
+                <!--顶部button-->
+                <div class="" style="position: absolute;
+                margin: 10px;z-index: 1100 ;right: 1%; top: 7%;
+                    color: #ffffff">
+                    <div class="mui-row">
+                        <div class="mui-col-xs-1">
+                        </div>
+                        <div class="mui-col-xs-1">
+                        </div>
+                        <div class="mui-col-xs-3">
+                            <button class="mui-btn mui-btn-blue" style="">
+                                默认
+                            </button>
+                        </div>
+                        <div class="mui-col-xs-3">
+                            <button class="mui-btn mui-btn-purple" style="">
+                                紫色
+                            </button>
+                        </div>
+                        <div class="mui-col-xs-3">
+                            <button class="mui-btn mui-btn-green" style="">
+                                绿色
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--底部button-->
+                <div class="" style="position: absolute;
+                margin: 10px;z-index: 1100 ;right: 1%; top: 88%;
+                    color: #ffffff">
+                    <div class="mui-row">
+                        <div class="mui-col-xs-3" style="margin: 15px;">
+                            <a href="#middlePopover1" class="mui-btn mui-btn-primary">
+                                城市切换
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-3" style="margin: 15px;">
+                            <a href="#middlePopover2" class="mui-btn mui-btn-primary">
+                                图层切换
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--弹出内容-->
+                <div id="middlePopover1" class="mui-popover" style="width: 100px;">
+                    <div class="mui-popover-arrow"></div>
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <ul class="mui-table-view">
+                                <li class="mui-table-view-cell"><a href="#">Item1</a>
+                                </li>
+                                <li class="mui-table-view-cell"><a href="#">Item2</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="middlePopover2" class="mui-popover" style="width: 100px;">
+                    <div class="mui-popover-arrow"></div>
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <ul class="mui-table-view">
+                                <li class="mui-table-view-cell"><a href="#">Item1</a>
+                                </li>
+                                <li class="mui-table-view-cell"><a href="#">Item2</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--MUI JS-->
+<script src="../js/mui.min.js"></script>
+<script>
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+    mui('.mui-scroll-wrapper').scroll();
+    mui('body').on('shown', '.mui-popover', function (e) {
+        //console.log('shown', e.detail.id);//detail为当前popover元素
+    });
+    mui('body').on('hidden', '.mui-popover', function (e) {
+        //console.log('hidden', e.detail.id);//detail为当前popover元素
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<script src="../js/mui.min.js"></script>
+		<style type="text/css">
+			html,
+			body {
+				color: #222;
+				font-family: Microsoft YaHei, Helvitica, Verdana, Tohoma, Arial, san-serif;
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+			}
+			
+			img {
+				border: 0;
+			}
+			
+			ul {
+				list-style: none outside none;
+				margin-top: 10px;
+				padding: 0;
+			}
+			
+			body {
+				background-color: #eee;
+			}
+			
+			body .mainmenu:after {
+				clear: both;
+				content: " ";
+				display: block;
+			}
+			
+			body .mainmenu li {
+				float: left;
+				margin-left: 5%;
+				margin-top: 2.5%;
+				width: 90%;
+				border-radius: 3px;
+				overflow: hidden;
+			}
+			
+			body .mainmenu li a {
+				display: block;
+				color: #FFF;
+				text-align: center
+			}
+			
+			body .mainmenu li a b {
+				display: block;
+				height: 80px;
+			}
+			
+			body .mainmenu li a img {
+				margin: 15px auto 15px;
+				width: 50px;
+				height: 50px;
+			}
+			
+			body .mainmenu li a span {
+				display: block;
+				height: 30px;
+				line-height: 30px;
+				background-color: #FFF;
+				color: #999;
+				font-size: 14px;
+			}
+			
+			body .mainmenu li:nth-child(8n+1) {
+				background-color: #36A1DB
+			}
+			
+			body .mainmenu li:nth-child(8n+2) {
+				background-color: #678ce1
+			}
+			
+			body .mainmenu li:nth-child(8n+3) {
+				background-color: #8c67df
+			}
+			
+			body .mainmenu li:nth-child(8n+4) {
+				background-color: #84d018
+			}
+			
+		</style>
+	</head>
+
+	<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">督查上报</h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mainmenu">
+			<li>
+				<a href="#" onclick="js2java_content1()"><b><img src="../images/main_sjck.png" /></b><span>草图绘制</span></a>
+			</li>
+			<li>
+				<a href="#" onclick="js2java_content2()"><b><img src="../images/main_jhck.png" /></b><span>图片采集</span></a>
+			</li>
+			<li>
+				<a href="#" onclick="js2java_content3()"><b><img src="../images/main_dcjl.png" /></b><span>视频拍摄</span></a>
+			</li>
+			<li>
+				<a href="#" onclick="js2java_content4()"><b><img src="../images/main_jlsb.png" /></b><span>音频录制</span></a>
+			</li>
+		</ul>
+		</div>
+	<script type="text/javascript" src="../js/immersed.js" ></script>
+	<script type="text/javascript">
+		function js2java_content1(){
+			JSInterface2.javaDrafterFunction();
+		}
+		function js2java_content2(){
+			JSInterface2.javaCameraFunction();
+		}
+		function js2java_content3(){
+			JSInterface2.javaVideoFunction();
+		}
+		function js2java_content4(){
+			JSInterface2.javaRecordFunction();
+		}
+
+	</script>
+	</body>
+</html>

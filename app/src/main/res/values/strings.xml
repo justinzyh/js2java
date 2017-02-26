@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hedao</string>
+    <string name="main_title">功能菜单</string>
+    <string name="title_activity_basic">BasicActivity</string>
+</resources>

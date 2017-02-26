@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+	
+	  <style type="text/css">  	
+			.mui-content #title_tab{width: 100%;height: 30px;background: #5F9CC5;line-height: 30px;}
+			.mui-content #title_tab a{color: #000000;float: left;text-align: center;}	
+	</style>
+	
+  </head>
+  <body>
+  	<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">计划查看</h1>
+			<a id="confirmBtn" type="button" class="mui-icon mui-icon-plusempty mui-pull-right" class="mui-btn mui-btn-blue mui-btn-outlined"></a>
+		</header>	
+		<div class="mui-content">
+		<div id="title_tab">
+  				<a style="width: 25%;">计划名称</a>
+  				<a style="width: 25%;">执行状态</a>
+  				<a style="width: 25%;">责任人</a>
+  				<a style="width: 25%;">结束时间</a>
+			</div>
+</div>
+<script src="js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			//mui初始化
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			
+			document.getElementById("confirmBtn").addEventListener('tap', function() {
+				var btnArray = ['否', '是'];
+				mui.confirm('新建计划,确认?', '新建计划', btnArray, function(e) {
+					if (e.index == 1) {
+						window.location.href="/ike7/cjjh.html";
+					}
+				})
+			});	
+		</script>
+</body>
+</html>

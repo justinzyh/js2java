@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="misapplication-tap-highlight" content="no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<script src="../js/mui.min.js"></script>
+		<style type="text/css">
+		    .mui-content h3{margin-top: 20px;}
+		    .mui-content input{margin: 0;}
+		    .mui-content .submit{margin-top: 20px;margin-left: 50%;}
+			#table_cjjh{width: 100%;margin-top: 10px;}
+			#table_cjjh tr{width: auto;height: 20px;}
+			#table_cjjh th{font-size: 14px;height: 20px;width: auto;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">新建计划</h1>
+		</header>
+		<div class="mui-content">
+			<h4 align="center">计划内容表</h4>
+			<form action="jhck.html" method="post">
+			<table border="1" id="table_cjjh" align="center">
+				<tr align="center">
+					<th >计划名称</th>
+					<td align="center"><input type="text" name="jhmc"></td>
+					<th>登记时间</th>
+					<td align="center"><input type="date" name="time"></td>
+				</tr>
+					
+				<tr align="center">
+					<th>巡查责任人</th>
+					<td align="center"><input type="text" name="pre"></td>
+					<th>巡查日期</th>
+					<td align="center"><input type="date" name="date"></td>
+				</tr>
+				
+				<tr align="center">
+					<th>参加人员</th>
+					<td align="center">
+						<input type="text" name="cjr" style="margin: 0;">
+					</td>
+					<th>巡查区域</th>
+					<td align="center">
+						<select class="mui-btn mui-btn-block" style="font-size: 15px; color: #000000; margin: 0;">
+						<option value="item-1">请选择巡检区域</option>
+						<option value="item-2">大道口至龙潭</option>
+						<option value="item-3">板桥至三山</option>
+						<option value="item-4">双闸至板桥河</option>
+						<option value="item-5">鼓楼至板桥河</option>
+						<option value="item-6">其他区域</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<input href="#" class="submit" type="submit" value="提交" align="center" onclick="js2java()"/>
+			</form>
+		</div>
+		<script type="text/javascript" src="../js/laydate.js"></script>
+		<script type="text/javascript">
+		function js2java() {
+		JSInterface2.javaCJJHFunction();
+		}
+		</script>
+	</body>
+
+</html>

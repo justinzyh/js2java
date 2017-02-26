@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<script src="js/mui.min.js"></script>
+	</head>
+	<style type="text/css">
+			.mui-content #date_select{width: 100%; background: #5F9CC5;display: block;height: auto;}
+			.mui-content #date_select label{margin-left: 5px;}
+			.mui-content #date_select input{height: 20px;margin-top: 5px;}
+			
+			.mui-content #title_tab{width: 100%;height: 30px;background: #5F9CC5;line-height: 30px;}
+			.mui-content #title_tab a{color: #000000;float: left;text-align: center;}
+	
+	</style>
+  </head>
+  <body>
+  	<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">事件查看</h1>
+		</header>	
+		<div class="mui-content">
+			<!--时间查询-->
+			<div id="date_select" style="text-align: center;">
+			<label for="meeting" style="width: 40%;">查询时间：</label>
+			<input id="meeting" type="date" value="2017-01-01" style="width: 60%;" style="height: 18px;"/>
+			<div>
+			<div id="title_tab">
+  				<a style="width: 25%;">事件名称</a>
+  				<a style="width: 25%;">记录人</a>
+  				<a style="width: 25%;">记录时间</a>
+  				<a style="width: 25%;">处理状态</a>
+			</div>
+  	</div>
+  </body>
+</html>
